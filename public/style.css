@@ -10,19 +10,6 @@ body {
   background-color: #cad0bf;
 }
 
-#homeDiv {
-  width: 340px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
-#homeDiv > p {
-  font-style: oblique;
-  text-align: center;
-}
-
 #wrapper {
   height: 400px;
   width: 350px;
@@ -61,6 +48,37 @@ nav > a {
   font-size: 10pt;
   color: rgb(0, 0, 0);
 }
+
+#clickedDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#clickedDiv > div > h3 {
+  font-size: 20pt;
+  margin: 0px;
+  padding: 0px;
+}
+
+#clickedDiv > div > p {
+  font-style: oblique;
+  font-size: 10pt;
+}
+
+.linksDiv {
+  width: 100%;
+  padding: 35px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.linksDiv > a {
+  text-decoration: none;
+  color: black;
+}
+
 h1 {
   text-align: center;
 }
