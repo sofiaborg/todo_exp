@@ -1,0 +1,128 @@
+html,
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+  margin: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cad0bf;
+}
+
+#homeDiv {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+#homeDiv > p {
+  font-style: oblique;
+  text-align: center;
+}
+
+#wrapper {
+  height: 400px;
+  width: 350px;
+  padding: 30px;
+  border: 1px solid black;
+}
+
+header {
+  padding-bottom: 23px;
+  border-bottom: 1px solid black;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav > a {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14pt;
+  color: rgb(0, 0, 0);
+}
+
+.bodywrapper {
+  padding-bottom: 30px;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  height: 250px;
+}
+
+.bodywrapper > a {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 10pt;
+  color: rgb(0, 0, 0);
+}
+h1 {
+  text-align: center;
+}
+
+a:hover {
+  font-style: oblique;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+li {
+  list-style: none;
+  text-align: left;
+}
+
+li > a {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 10pt;
+  color: rgb(0, 0, 0);
+}
+
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+.circle {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.circle:hover {
+  background-color: cadetblue;
+}
+
+.circle > a {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 10pt;
+  color: rgb(0, 0, 0);
+  font-style: oblique;
+}
+
+input {
+  width: 100px;
+}
+
+.clickeditem {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+footer {
+  border-top: 1px solid black;
+}
