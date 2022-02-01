@@ -65,7 +65,9 @@ app.get("/:id/delete", (req, res) => {
 });
 
 app.get("/:id/status", (req, res) => {
-  res.render("status-todo", { todoArr });
+  const id = parseInt(req.params.id);
+  const todo = todoArr.find((t) => t.id === id);
+  res.render("status-todo", todo);
 });
 
 //////////////////////////
@@ -93,6 +95,9 @@ app.post("/:id/delete", (req, res) => {
   res.redirect("/");
 });
 
+//////////////////////
+//UPDATE/EDIT todo//
+//////////////////////
 //redigera description
 app.post("/:id/edit", (req, res) => {
   const id = parseInt(req.params.id);
@@ -109,15 +114,11 @@ app.post("/:id/status", (req, res) => {
 
   if (req.body.done) {
     todoArr[index].done = true;
-  } else if (req.body.undone) {
+  } else {
     todoArr[index].done = false;
   }
-  res.redirect("/" + id);
+  res.redirect("/");
 });
-
-//////////////////////
-//UPDATE/EDIT todo//
-//////////////////////
 
 //////////////////
 //LYSSNA PÅ PORT//
