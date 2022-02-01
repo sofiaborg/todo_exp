@@ -115,6 +115,7 @@ li > a {
 p {
   margin: 0px;
   padding: 0px;
+  padding-bottom: 8px;
 }
 
 .circle {

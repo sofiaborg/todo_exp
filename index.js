@@ -5,11 +5,7 @@ const res = require("express/lib/response");
 const dateTime = require("node-datetime");
 const req = require("express/lib/request");
 
-/////////////////////////////
-//STARTA UPP EXPRESS ENGINE//
-/////////////////////////////
 const app = express();
-//registrera en motor för hantering av templates(ex.style.css)
 app.engine(
   "hbs",
   exphbs.engine({
@@ -22,9 +18,7 @@ app.set("view engine", "hbs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
-/////////////////////////
-//FUNKTION FÖR UNIKA ID//
-/////////////////////////
+//function for unique id
 function getNewId(list) {
   let maxId = 0;
   for (const item of list) {
@@ -35,9 +29,7 @@ function getNewId(list) {
   return maxId + 1;
 }
 
-///////////////
-//READ todos//
-///////////////
+//get 6 routes
 app.get("/", (req, res) => {
   res.render("todos", { todoArr });
 });
@@ -70,9 +62,7 @@ app.get("/:id/status", (req, res) => {
   res.render("status-todo", todo);
 });
 
-//////////////////////////
-//CREATE & DELETE todo//
-//////////////////////////
+//add new todo. Add id and timestamp
 app.post("/new", (req, res) => {
   const newId = getNewId(todoArr);
   let dt = dateTime.create();
@@ -84,9 +74,11 @@ app.post("/new", (req, res) => {
     done: false,
   };
   todoArr.push(newTodo);
+
   res.redirect("/");
 });
 
+//delete todo
 app.post("/:id/delete", (req, res) => {
   const id = parseInt(req.params.id);
   const index = todoArr.findIndex((t) => t.id === id);
@@ -95,10 +87,7 @@ app.post("/:id/delete", (req, res) => {
   res.redirect("/");
 });
 
-//////////////////////
-//UPDATE/EDIT todo//
-//////////////////////
-//redigera description
+//edit description of todo
 app.post("/:id/edit", (req, res) => {
   const id = parseInt(req.params.id);
   const index = todoArr.findIndex((t) => t.id === id);
@@ -107,22 +96,22 @@ app.post("/:id/edit", (req, res) => {
   res.redirect("/" + id);
 });
 
-//done/undone redigera done-egenskapen till true/false
+//edit status of todo
 app.post("/:id/status", (req, res) => {
   const id = parseInt(req.params.id);
   const index = todoArr.findIndex((t) => t.id === id);
 
   if (req.body.done) {
     todoArr[index].done = true;
+    todoArr[index].description = todoArr[index].description + " ✓";
   } else {
     todoArr[index].done = false;
+    todoArr[index].description =
+      todoArr[index].description + " this todo is undone";
   }
   res.redirect("/");
 });
 
-//////////////////
-//LYSSNA PÅ PORT//
-//////////////////
 app.listen(8000, () => {
   console.log("http://localhost:8000/");
 });
