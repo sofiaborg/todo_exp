@@ -1,10 +1,25 @@
-<ul>
-  {{#each todoArr}}
-    <li><a href="/{{id}}">{{description}}</a>
-    </li>
-  {{/each}}
+<div id="homewrapper">
+  <ul>
+    {{#each todoArr}}
+      <li><h4>{{description}} + {{done}}</h4>
+        <p>created at {{created}}</p>
+        <div class="listdiv">
+          <a href="/{{id}}/edit">edit</a>
+          <a href="/{{id}}/delete">delete</a>
+          <form action="/" method="post"><input
+              type="submit"
+              name="done"
+              value="mark as done"
+            /></form>
+        </div>
+      </li>
+    {{/each}}
 
-</ul>
-<div class="circle">
-  <a href="/new">create new</a>
+  </ul>
+  <div id="circleDiv">
+    <div class="circle">
+      <a href="/new">create new</a>
+    </div>
+
+  </div>
 </div>

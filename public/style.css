@@ -11,7 +11,6 @@ body {
 }
 
 #wrapper {
-  height: 400px;
   width: 350px;
   padding: 30px;
   border: 1px solid black;
@@ -40,84 +39,52 @@ nav > a {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 250px;
 }
 
-.bodywrapper > a {
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 10pt;
-  color: rgb(0, 0, 0);
-}
-
-.inputBtn {
-  border-style: none;
-}
-
-.submitBtn {
-  width: auto;
-}
-
-#clickedDiv {
+#homewrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-#clickedDiv > div > p {
-  font-style: oblique;
-  font-size: 10pt;
-}
-
-.linksDiv {
-  width: 100%;
-  padding: 35px;
+.listdiv {
   display: flex;
-  justify-content: space-evenly;
-}
-
-.linksDiv > a {
-  text-decoration: none;
-  color: black;
-}
-
-h1 {
-  text-align: center;
-}
-
-h3 {
-  font-size: 20pt;
-  margin: 0px;
-  padding: 0px;
-}
-
-a:hover {
-  font-style: oblique;
+  justify-content: left;
+  gap: 30px;
+  padding-bottom: 15px;
 }
 
 ul {
-  margin: 0px;
-  padding: 0px;
-}
-li {
-  list-style: none;
   text-align: left;
 }
 
 li > a {
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 10pt;
-  color: rgb(0, 0, 0);
-}
-
-p {
+  color: black;
   margin: 0px;
   padding: 0px;
-  padding-bottom: 8px;
+  text-decoration: none;
 }
 
+li > p {
+  font-style: oblique;
+  margin: 0px;
+  padding: 0px;
+  font-size: 10pt;
+}
+
+.listdiv > a {
+  color: black;
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 10pt;
+}
+
+#circleDiv {
+  display: flex;
+  justify-content: right;
+}
 .circle {
   height: 90px;
   width: 90px;
@@ -141,14 +108,27 @@ p {
   font-style: oblique;
 }
 
-input {
-  width: 100px;
+.inputBtn {
+  border-style: none;
 }
 
-.clickeditem {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.submitBtn {
+  width: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3,
+h4 {
+  font-size: 14pt;
+  margin: 0px;
+  padding: 0px;
+}
+
+a:hover {
+  font-style: oblique;
 }
 
 footer {

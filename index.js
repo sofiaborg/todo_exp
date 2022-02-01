@@ -38,12 +38,6 @@ app.get("/new", (req, res) => {
   res.render("new-todo");
 });
 
-app.get("/:id", (req, res) => {
-  const id = parseInt(req.params.id);
-  const todo = todoArr.find((t) => t.id === id);
-  res.render("clicked-todo", todo);
-});
-
 app.get("/:id/edit", (req, res) => {
   const id = parseInt(req.params.id);
   const todo = todoArr.find((t) => t.id === id);
@@ -54,12 +48,6 @@ app.get("/:id/delete", (req, res) => {
   const id = parseInt(req.params.id);
   const todo = todoArr.find((t) => t.id === id);
   res.render("delete-todo", todo);
-});
-
-app.get("/:id/status", (req, res) => {
-  const id = parseInt(req.params.id);
-  const todo = todoArr.find((t) => t.id === id);
-  res.render("status-todo", todo);
 });
 
 //add new todo. Add id and timestamp
@@ -93,22 +81,6 @@ app.post("/:id/edit", (req, res) => {
   const index = todoArr.findIndex((t) => t.id === id);
 
   todoArr[index].description = req.body.description;
-  res.redirect("/" + id);
-});
-
-//edit status of todo
-app.post("/:id/status", (req, res) => {
-  const id = parseInt(req.params.id);
-  const index = todoArr.findIndex((t) => t.id === id);
-
-  if (req.body.done) {
-    todoArr[index].done = true;
-    todoArr[index].description = todoArr[index].description + " ✓";
-  } else {
-    todoArr[index].done = false;
-    todoArr[index].description =
-      todoArr[index].description + " this todo is undone";
-  }
   res.redirect("/");
 });
 
