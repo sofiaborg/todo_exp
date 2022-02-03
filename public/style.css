@@ -1,19 +1,20 @@
+/* general pages */
+
 html,
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
   text-align: center;
   margin: 0px;
   width: 100%;
+  background-color: #cad0bf;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #cad0bf;
 }
 
 #wrapper {
   width: 350px;
   padding: 30px;
-  border: 1px solid black;
 }
 
 header {
@@ -26,10 +27,11 @@ nav {
   justify-content: center;
 }
 
-nav > a {
+nav > h1 > a {
+  font-family: "Source Code Pro", monospace;
   text-decoration: none;
   cursor: pointer;
-  font-size: 14pt;
+  font-size: 24pt;
   color: rgb(0, 0, 0);
 }
 
@@ -41,50 +43,35 @@ nav > a {
   align-items: center;
 }
 
+footer {
+  border-top: 1px solid black;
+}
+
+footer > i {
+  font-size: 18pt;
+  padding-top: 20px;
+  color: rgb(57, 145, 35);
+}
+
+/* todos.hbs */
 #homewrapper {
   width: 100%;
+  height: 350px;
   display: flex;
   flex-direction: column;
 }
 
-.listdiv {
-  display: flex;
-  justify-content: left;
-  gap: 30px;
-  padding-bottom: 15px;
-}
-
-ul {
-  text-align: left;
-}
-
-li > a {
-  color: black;
-  margin: 0px;
-  padding: 0px;
-  text-decoration: none;
-}
-
-li > p {
-  font-style: oblique;
-  margin: 0px;
-  padding: 0px;
-  font-size: 10pt;
-}
-
-.listdiv > a {
-  color: black;
-  margin: 0px;
-  padding: 0px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 10pt;
-}
-
 #circleDiv {
+  width: 340px;
   display: flex;
-  justify-content: right;
+  justify-content: space-between;
 }
+
+.headline > h3 {
+  font-size: 20pt;
+  font-family: "Source Code Pro", monospace;
+}
+
 .circle {
   height: 90px;
   width: 90px;
@@ -97,7 +84,7 @@ li > p {
 }
 
 .circle:hover {
-  background-color: cadetblue;
+  background-color: rgb(57, 145, 35);
 }
 
 .circle > a {
@@ -108,29 +95,96 @@ li > p {
   font-style: oblique;
 }
 
-.inputBtn {
-  border-style: none;
+#sortDiv {
+  display: flex;
+  gap: 5px;
+  padding-bottom: 20px;
 }
 
-.submitBtn {
-  width: auto;
-}
-
-h1 {
-  text-align: center;
-}
-
-h3,
-h4 {
-  font-size: 14pt;
+#sortDiv > h5 {
   margin: 0px;
   padding: 0px;
 }
 
-a:hover {
+#sortDiv > a {
+  text-decoration: none;
+  color: black;
+  font-style: oblique;
+  font-size: 10pt;
+}
+
+#sortDiv > a:hover {
+  text-decoration: underline;
+}
+
+#listDiv {
+  overflow: scroll;
+}
+
+#listDiv > ul {
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#listDiv > ul > li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info > h4,
+p {
+  padding: 0px;
+  margin: 0px;
+  text-align: left;
+}
+
+.info > p {
+  font-style: oblique;
+  font-size: 10pt;
+}
+
+.editDel {
+  display: flex;
+  justify-content: left;
+  gap: 30px;
+  padding-bottom: 15px;
+}
+
+.editDel > a {
+  text-decoration: none;
+  color: black;
+}
+
+.editDel > a:hover {
   font-style: oblique;
 }
 
-footer {
-  border-top: 1px solid black;
+/* new-todo.hbs */
+/* delete-todo.hbs */
+/* edit-todo.hbs */
+.pagewrapper {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.check {
+  height: 15px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.submitBtn {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+  #wrapper {
+    border: 1px solid black;
+  }
 }

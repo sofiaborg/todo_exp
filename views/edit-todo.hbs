@@ -1,9 +1,20 @@
-<div id="editwrapper"><form action="/{{id}}/edit" method="post"><input
+<div class="pagewrapper">
+    
+    <div>
+    <h3>edit description and/or status:</h3>
+
+    <form action="/{{id}}/edit" method="post"><input
       type="text"
       name="description"
       placeholder="description"
       value="{{description}}"
       class="inputBtn"
     />
-    <input type="submit" value="save" class="submitBtn" /></form>
+    
+
+<input type="checkbox" name="done" class="check" {{#if done}}checked{{/if}}/>
+</div>
+<input type="submit" value="save" class="submitBtn" />
+
+</form>
 </div>

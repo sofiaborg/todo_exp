@@ -29,7 +29,7 @@ function getNewId(list) {
   return maxId + 1;
 }
 
-//get 6 routes
+//get routes
 app.get("/", (req, res) => {
   res.render("todos", { todoArr });
 });
@@ -48,6 +48,10 @@ app.get("/:id/delete", (req, res) => {
   const id = parseInt(req.params.id);
   const todo = todoArr.find((t) => t.id === id);
   res.render("delete-todo", todo);
+});
+
+app.get("/sorted", (req, res) => {
+  res.render("todos");
 });
 
 //add new todo. Add id and timestamp
@@ -81,6 +85,11 @@ app.post("/:id/edit", (req, res) => {
   const index = todoArr.findIndex((t) => t.id === id);
 
   todoArr[index].description = req.body.description;
+  todoArr[index].done = Boolean(req.body.done);
+
+  if ((todoArr[index].done = Boolean(req.body.done))) {
+    todoArr[index].description = req.body.description + " ✓";
+  }
   res.redirect("/");
 });
 
