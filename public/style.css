@@ -118,7 +118,7 @@ footer > i {
 }
 
 #listDiv {
-  overflow: scroll;
+  overflow: auto;
 }
 
 #listDiv > ul {
