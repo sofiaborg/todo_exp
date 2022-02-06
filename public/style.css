@@ -95,40 +95,40 @@ footer > i {
   font-style: oblique;
 }
 
-#sortDiv {
+.sortDiv {
   display: flex;
   gap: 5px;
   padding-bottom: 20px;
 }
 
-#sortDiv > h5 {
+.sortDiv > h5 {
   margin: 0px;
   padding: 0px;
 }
 
-#sortDiv > a {
+.sortDiv > a {
   text-decoration: none;
   color: black;
   font-style: oblique;
   font-size: 10pt;
 }
 
-#sortDiv > a:hover {
+.sortDiv > a:hover {
   text-decoration: underline;
 }
 
-#listDiv {
+.listDiv {
   overflow: auto;
 }
 
-#listDiv > ul {
+.listDiv > ul {
   padding: 0px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-#listDiv > ul > li {
+.listDiv > ul > li {
   display: flex;
   justify-content: space-between;
 }

@@ -7,26 +7,41 @@
     </div>
   </div>
 
-  <div id="sortDiv">
-    <h5>sort tasks by:</h5>
-    <a href="/sorted">done</a>
-    <a href="/sorted">undone</a>
-  </div>
+  {{#if todoArr}}
+    <div class="sortDiv">
+      <h5>sort tasks by:</h5>
+      <a href="/newest">newest</a>
+      <a href="/oldest">oldest</a>
+    </div>
+    <div class="sortDiv">
+      <h5>show only:</h5>
+      <a href="/complete">done</a>
+      <a href="/incomplete">undone</a>
+    </div>
 
-  <div id="listDiv">
-    <ul>
-      {{#each todoArr}}
-        <li>
+    <div class="listDiv">
 
-          <div class="info"><h4>{{description}}</h4>
-            <p>created at {{created}}</p></div>
-          <div class="editDel">
-            <a href="/{{id}}/edit">edit</a>
-            <a href="/{{id}}/delete">delete</a>
-          </div>
-        </li>
-      {{/each}}
-    </ul>
-  </div>
+      <ul>
+
+        {{#each todoArr}}
+          <li>
+
+            <div class="info"><h4>{{description}}</h4>
+              <p>created at {{created}}</p></div>
+            <div class="editDel">
+              <a href="/{{id}}/edit">edit</a>
+              <a href="/{{id}}/delete">delete</a>
+            </div>
+          </li>
+        {{/each}}
+
+      </ul>
+    </div>
+
+  {{else}}
+
+    <p>You have no tasks. Create one!</p>
+
+  {{/if}}
 
 </div>

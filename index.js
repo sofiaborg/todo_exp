@@ -29,7 +29,7 @@ function getNewId(list) {
   return maxId + 1;
 }
 
-//get routes
+//get basic routes
 app.get("/", (req, res) => {
   res.render("todos", { todoArr });
 });
@@ -50,8 +50,12 @@ app.get("/:id/delete", (req, res) => {
   res.render("delete-todo", todo);
 });
 
-app.get("/sorted", (req, res) => {
-  res.render("todos");
+app.get("/complete", (req, res) => {
+  res.render("complete-todo", { todoArr });
+});
+
+app.get("/incomplete", (req, res) => {
+  res.render("incomplete-todo", { todoArr });
 });
 
 //add new todo. Add id and timestamp
@@ -87,12 +91,21 @@ app.post("/:id/edit", (req, res) => {
   todoArr[index].description = req.body.description;
   todoArr[index].done = Boolean(req.body.done);
 
-  if ((todoArr[index].done = Boolean(req.body.done))) {
-    todoArr[index].description = req.body.description + " ✓";
-  }
   res.redirect("/");
 });
 
+//sort based on new/old
+app.get("/oldest", (req, res) => {
+  todoArr.sort((a, b) => (a.created > b.created ? 1 : -1));
+  res.render("todos", { todoArr });
+});
+
+app.get("/newest", (req, res) => {
+  todoArr.sort((a, b) => (a.created > b.created ? -1 : 1));
+  res.render("todos", { todoArr });
+});
+
+//port
 app.listen(8000, () => {
   console.log("http://localhost:8000/");
 });
